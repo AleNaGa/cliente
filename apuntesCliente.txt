@@ -1,0 +1,82 @@
+JAVASCRIPT -> lenguaje menos seguro
+	operaciones básicas
+	
+	var antigua forma de declarar variables
+	
+	importante: 
+	Declarar variables
+		let x = 1 // la variable actúa como en java
+		const y = 3.14// variables constantes
+	
+	console.log es Print
+		
+	Mirar apuntes para códigos
+	
+	
+	`hola ${x}`
+	
+	usar === para comparar
+	
+	
+	diferencia entre nulo y noDefinido
+	
+	en js la longitud de los arrays es mutable || parece lista de JAVA
+	array.push() añade un elemento al Array
+	array.pop(elemeto)
+	
+	
+	métodos: 
+	
+function saludar(){
+console.log("holamundo")
+}
+
+function saludar(nombre){
+return `hola${nombre}`
+}
+let res = saludar("ale")
+console.log(res)
+
+
+console.table([[1,2],[3,4]]) // ver la matriz en tabla
+
+//funcion flecha
+let func = (elemento) => console.log(elemento)
+arrayNames.forEach(func)  
+
+
+// funciones de orden superior
+
+-let array1 = [1,2,3]
+
+-let map = array1.map(funcion)//crea un nuevo array aplicando la funcion
+
+-array.some()// si se cumple el predicado iterando por el array 
+
+-array.findIndex((e)=> e>3) // devuelve el primer indice cumple una condición
+
+-array.reduce((res,3)=> res+=e,1//valorDef) // aplica la funcion y almacena el resultado en RES
+
+-let arrayPar = array.filter((e) => e%2==0) // crea un nuevo array filtrado 
+
+-array.find(e => e=3) //devuelve el valor
+
+-array.every() // que se cumpla en todos
+
+
+//DESTRUCTURE
+let[i] = array //coge el primer elemento del array y lo guarda en i
+let[,j] = array //coge el segundo
+let[ , j,... resto] = array //te guarda en un array el resto
+
+
+
+//DIFERENCIAS JAVA EN ARRAYS
+pueden tener elementos de diferentes tipos. 
+longitud mutable
+Meter elementos: PUSH al final
+Meter elementos: UNSHIFT al principio
+Borra final de array: POP
+Borrar principio: SHIFT
+Borrar 5 desde el indice 2: SPLICE(2,5)
+
