@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "name": "Hello world",
+    "description": "Saludar al mundo con una extensión",
+    "version": "1.0",
+    "action": {
+      "default_popup": "index.html",
+      "default_icon": "./icons/iconHello.png"
+    }
+  }
