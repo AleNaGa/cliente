@@ -118,42 +118,87 @@ if(arrayEj2.every((n)=>prime(n)))
     console.log("es Primo")
 else console.log("no es Primo")
 //3) Dado el array [5,1,7,8,2,4,6,3,9], comprueba si todos son números primos
-
+if(arrayEj2.every((n)=>!prime(n))){
+    console.log("no todos son Primos")
+}
 //4) Dado el array [5,1,7,8,2,4,6,3,9], comprueba en que posición está el primer número primo
-
 //5) Dado el array [5,1,7,8,2,4,6,3,9], comprueba cual es el primer número primo
-
+for(n of arrayEj2){
+    if(prime(n)){
+        console.log("está en la posicion".arrayEj2.indexOf(n) +" y es el numero: "+n  )
+        break
+    }
+}
 //6) Dado el array [5,1,7,8,2,4,6,3,9], quédate sólo con los números primos
-
+let soloPrimos = arrayEj2.filter((n)=>prime(n))
 //7)  Dado el array de números primos, dame el producto de todos los elementos del array
-
+let productos = 0;
+for(n of soloPrimos){
+    prodctos = productos*n
+}
+console.log(productos)
 //8)  Define una función que reciba un String y devuelva si es palíndromo o no
-
+function palindromo(string){
+    return string == string.split("").reverse().join("")
+}
 //9) Dado el array ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"], 
 //comprueba si hay algún palíndromo
-
+let arrayPalind = ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"]
+for(n of arrayPalind){
+    if(palindromo(n))console.log("hay un palindromo")
+}
 //10) Dado el array ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"], 
 //comprueba si todos son palíndromos
-
+if(arrayPalind.every((n)=>palindromo(n)))console.log("todos son palindromos")
 //11) Dado el array ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"], 
 //comprueba en que posición está el primer palíndromo
-
 //12) Dado el array ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"], 
 //comprueba cual es el primer palíndromo
-
+for(n of arrayPalind){
+    if(palindromo(n)){
+        console.log("está en la posicion".arrayPalind.indexOf(n) +" y es el palindromo: "+n  )
+        break
+    }
+}
 //13) Dado el array ["ana", "mesa", "radar","seres","folio","sudoku","amor a roma", "sol", "mar", "oso", "salas"], 
 //quédate sólo con los palíndromos
-
+let arraySoloPalin = arrayPalind.filter((n)=>palindromo(n))
 //14)  Dado el array de números palíndromos, dame la concatenación de todos los elementos del array
+console.log(arraySoloPalin.join(", "))
 
 
-/*
-Otros:
-1) Dado un array de números, verifica si hay algún número negativo
-2) Dado un array de Strings, encuentra el índice del primer String que empiece por la letra 'A'
-3) Dado un array de números de 3 o más cifras, calcula la suma de las últimas cifras de cada número
-4) Dado un array de arrays, filtra el array para que sólo queden los arrays de longitud 5
-5) Dado un array de Strings, encuentra el primer string de longitud 3
-6) Dado un array de números, verifica que todos los números sean de 2 cifras o más
-*/
+//1) Dado un array de números, verifica si hay algún número negativo
+function negative(array){
+    return array.some((n)=>n<0)
+}
+//2) Dado un array de Strings, encuentra el índice del primer String que empiece por la letra 'A'
+function firstA(array){
+    return array.findIndex((n)=>n[0]=="A")
+}
+//3) Dado un array de números de 3 o más cifras, calcula la suma de las últimas cifras de cada número
+function suma3cifras(array){
+    let suma = 0;
+    for(n of array){
+        if(n>=100){
+            suma+=n%10;
+        }
+    }
+}
+//4) Dado un array de arrays, filtra el array para que sólo queden los arrays de longitud 5
+function filtroArray5(array){
+    for(n of array){
+        if(n.length!=5){
+            array.splice(array.indexOf(n),1)
+    }}
+    return array
+}
+//5) Dado un array de Strings, encuentra el primer string de longitud 3
+function firstLength3(array){
+    return array.find((n)=>n.length==3)
+}
+//6) Dado un array de números, verifica que todos los números sean de 2 cifras o más
+function dosCifras(array){
+    return array.every((n)=>n>=10)
+}
+
 
